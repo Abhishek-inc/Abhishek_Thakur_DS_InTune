@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ genre|capitalize }} Radio | InTune </title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.5.0/socket.io.min.js"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <header class="main-header">
+        <nav class="genre-nav">
+            <a href="/" class="nav-logo">🎵 InTune</a>
+            <div class="nav-links">
+                <a href="/" class="{% if genre == 'main' %}active{% endif %}">🏠 Home</a>
+                <a href="/rock" class="{% if genre == 'rock' %}active{% endif %}">🎸 Rock</a>
+                <a href="/classical" class="{% if genre == 'classical' %}active{% endif %}">🎻 Classical</a>
+                <a href="/electronic" class="{% if genre == 'electronic' %}active{% endif %}">🎧 Electronic</a>
+                <span id="current-username">👤 Guest</span>
+                <a href="#" id="set-username-link">Set Username</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="content-container">
+        {% block page_content %}{% endblock %}
+
+        <div class="player-container">
+            <audio id="player" controls></audio>
+            <div class="player-info">
+                <span id="now-playing">Loading playlist...</span>
+                <span id="track-progress">-:-- / -:--</span>
+            </div>
+        </div>
+
+        {% if genre != 'main' %}
+        <div class="chat-container">
+            <div class="chat-header">
+                <h3>Live Chat <span id="user-count">(0 listeners)</span></h3>
+            </div>
+            <div class="comments" id="comments"></div>
+            <div class="comment-input">
+                <input type="text" id="comment-input" placeholder="Send a message..." maxlength="200">
+                <button onclick="postComment()">Send</button>
+            </div>
+        </div>
+        {% endif %}
+    </main>
+
+    <footer class="main-footer">
+        <p>© 2025 InTune | All music under Creative Commons license</p>
+    </footer>
+
+    <script>
+        const genre = "{{ genre }}";
+    </script>
+    <script src="{{ url_for('static', filename='js/radio.js') }}"></script>
+</body>
+</html>

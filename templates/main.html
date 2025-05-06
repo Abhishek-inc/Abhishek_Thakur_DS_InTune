@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% set genre = 'main' %}
+
+{% block page_content %}
+<div class="home-content">
+    <h2>Welcome to InTune</h2>
+    <p>Listen to your favorite genres below:</p>
+
+    <div class="genre-grid">
+        <a href="/rock" class="genre-card">
+            <img src="{{ url_for('static', filename='images/guitar.png') }}" alt="Rock" class="genre-image">
+            <h3>Rock</h3>
+            <p>Invigorating guitars and drums</p>
+        </a>
+
+        <a href="/classical" class="genre-card">
+            <img src="{{ url_for('static', filename='images/violin.png') }}" alt="Classical" class="genre-image">
+            <h3>Classical</h3>
+            <p>Timeless symphonies</p>
+        </a>
+
+        <a href="/electronic" class="genre-card">
+            <img src="{{ url_for('static', filename='images/headphones.png') }}" alt="Electronic" class="genre-image">
+            <h3>Electronic</h3>
+            <p>EDM and techno beats</p>
+        </a>
+    </div>
+</div>
+{% endblock %}

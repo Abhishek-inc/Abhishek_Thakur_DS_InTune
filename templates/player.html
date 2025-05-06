@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block page_content %}
+<div class="genre-info">
+    <h2>About {{ genre|capitalize }} Stream</h2>
+    <div id="genre-description">
+        {% if genre == 'rock' %}
+        <p>Featuring high octane guitar riffs.</p>
+        {% elif genre == 'classical' %}
+        <p>Timeless compositions from Mozart, Beethoven, and other great masters.</p>
+        {% else %}
+        <p>The latest electronic beats and dance music.</p>
+        {% endif %}
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,21 @@
+[
+    {
+        "title": "Eve",
+        "artist": "Mindthings",
+        "file": "Eve.mp3",
+        "duration": "04:56"
+    },
+    {
+        "title": "Koord",
+        "artist": "Wolf Asylum",
+        "file": "wolfasylumkoord.mp3",
+        "duration": "03:44"
+    },
+    {
+        "title": "Greenish Blue",
+        "artist": "Golden Grey",
+        "file": "goldengreygreenishblue.mp3",
+        "duration": "03:40"
+    }
+
+]

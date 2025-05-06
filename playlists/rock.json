@@ -1,0 +1,21 @@
+[
+    {
+        "title": "Baseball",
+        "artist": "Audio Dollar",
+        "file": "baseball.mp3",
+        "duration": "03:18"
+    },
+    {
+        "title": "Beyond The Line",
+        "artist": "Benjamin Tissot",
+        "file": "beyondtheline.mp3",
+        "duration": "03:06"
+    },
+    {
+        "title": "This is My Day",
+        "artist": "Sean Ferree",
+        "file": "seanferreethisismyday.mp3",
+        "duration": "06:16"
+    }
+
+]
